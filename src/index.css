@@ -1,0 +1,198 @@
+*{
+box-sizing: content-box;
+}
+
+body
+{
+  padding: 0;
+  margin: 0;
+  background-color: #607274;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container
+{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2.5vh;
+}
+
+/* .sidebar-container
+{
+  width: 20%;
+  background-color: #FAEED1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  margin-top: 2.5vh;
+  border-radius: 0 20px 20px 0;
+  color: black;
+} */
+
+.sidebar-container
+{
+  position: fixed;
+  background-color: #FAEED1;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 25%;
+  width: 20%;
+  border-radius: 0 20px 20px 0;
+  gap: 1rem;
+}
+
+.sidebar-container h1
+{
+  margin: 0;
+}
+
+.buttons-container
+{
+  width: 80%;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.input-button
+{
+  min-height: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #607274;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  box-shadow: 0 0 4px black;
+  
+}
+
+.input-button::placeholder {
+  color: white;
+  font-size: small;
+  opacity: 0.5;
+}
+
+.input-button:hover{
+  cursor: pointer;
+}
+
+
+.select-container
+{
+  display: flex;
+  gap: 1rem;
+}
+
+#select-button
+{
+  width: 80%;
+}
+
+#number-input
+{
+  width: 30%;
+  cursor: text;
+}
+
+
+.page-container
+{
+  background-color: white;
+  margin-top: 2.5vh;
+  /* width: 21cm;
+  height: 29.7cm; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 25%;
+  width: 50%;
+  aspect-ratio: 1/1.414 !important;
+}
+
+.item-wrapper
+{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.export-container
+{
+  height: 50%;
+  top: 25%;
+  right: 5%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-items
+{
+  width: 300px;
+  height: 25px;
+}
+
+.label-wrapper
+{
+  width: 40%;
+  text-align: center;
+}
+
+.colon-wrapper
+{
+  width: 10%;
+}
+
+.colon-wrapper p
+{
+  margin: 0;
+}
+
+.element-wrapper
+{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.selectbox-item
+{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.selectbox-item p
+{
+  margin: 0;
+}
+
+.selectbox-item input
+{
+  margin-bottom: 0;
+}
+
+.page-items[type='textarea']
+{
+  height: 50px;
+}
+
+.export-button{
+  background-color: #B2A59B;
+  border: 1px solid black;
+  padding: 10px;
+  cursor: pointer;
+}
