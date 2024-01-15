@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { DeleteStore } from "../store";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 export default function Elements({ name, count, id }) {
   const [hovering, setIsHovering] = useState(false);
@@ -32,7 +33,7 @@ export default function Elements({ name, count, id }) {
     });
   }
 
-  const { deleteItem } = useContext(DeleteStore);
+  const { deleteItem, swapItem } = useContext(DeleteStore);
 
   return (
     <motion.div
@@ -41,10 +42,30 @@ export default function Elements({ name, count, id }) {
       onMouseLeave={hoverLeave}
       initial={{ x: -30 }}
       animate={{ x: 0 }}
-      exit={{ x: -100, opacity:0 }}
+      exit={{ x: -100, opacity: 0 }}
       layout
     >
       <div className="label-wrapper">
+        {hovering && (
+          <div className="arrows-updown">
+            <motion.div
+              className="arrow-wrapper"
+              initial={{ opacity: 0.5 }}
+              whileHover={{ opacity: 1, scale: 1.02, cursor: "pointer" }}
+              onClick={() => swapItem("Up", id)}
+            >
+              <FaArrowUp />
+            </motion.div>
+            <motion.div
+              className="arrow-wrapper"
+              initial={{ opacity: 0.5 }}
+              whileHover={{ opacity: 1, scale: 1.02, cursor: "pointer" }}
+              onClick={() => swapItem("Down", id)}
+            >
+              <FaArrowDown />
+            </motion.div>
+          </div>
+         )}
         <label contentEditable suppressContentEditableWarning>
           Enter your label
         </label>
@@ -54,7 +75,10 @@ export default function Elements({ name, count, id }) {
       </div>
       <div className="element-wrapper">{content}</div>
       {hovering && (
-        <motion.div whileHover={{cursor:"pointer",scale:1.2}} style={{marginLeft:"2%"}}>
+        <motion.div
+          whileHover={{ cursor: "pointer", scale: 1.2 }}
+          style={{ marginLeft: "2%" }}
+        >
           <MdDelete onClick={() => deleteItem(id)} />
         </motion.div>
       )}

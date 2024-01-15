@@ -1,39 +1,24 @@
-*{
-box-sizing: content-box;
+* {
+  box-sizing: content-box;
 }
 
-body
-{
+body {
   padding: 0;
   margin: 0;
   background-color: #607274;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.main-container
-{
+.main-container {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   margin-bottom: 2.5vh;
 }
 
-/* .sidebar-container
-{
-  width: 20%;
-  background-color: #FAEED1;
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  margin-top: 2.5vh;
-  border-radius: 0 20px 20px 0;
-  color: black;
-} */
-
-.sidebar-container
-{
+.sidebar-container {
   position: fixed;
-  background-color: #FAEED1;
+  background-color: #faeed1;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -45,21 +30,18 @@ body
   gap: 1rem;
 }
 
-.sidebar-container h1
-{
+.sidebar-container h1 {
   margin: 0;
 }
 
-.buttons-container
-{
+.buttons-container {
   width: 80%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
 }
 
-.input-button
-{
+.input-button {
   min-height: 30px;
   border-radius: 10px;
   border: 1px solid black;
@@ -68,7 +50,6 @@ body
   font-size: medium;
   font-weight: bold;
   box-shadow: 0 0 4px black;
-  
 }
 
 .input-button::placeholder {
@@ -77,45 +58,46 @@ body
   opacity: 0.5;
 }
 
-.input-button:hover{
+.input-button:hover {
   cursor: pointer;
 }
 
-
-.select-container
-{
+.select-container {
   display: flex;
   gap: 1rem;
 }
 
-#select-button
-{
+#select-button {
   width: 80%;
 }
 
-#number-input
-{
+#number-input {
   width: 30%;
   cursor: text;
 }
 
-
-.page-container
+.fullpage-container
 {
+  margin-left: 20%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container {
   background-color: white;
   margin-top: 2.5vh;
-  /* width: 21cm;
-  height: 29.7cm; */
+  width: 21cm;
+  height: 29.7cm;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 25%;
-  width: 50%;
   aspect-ratio: 1/1.414 !important;
+  overflow: hidden;
 }
 
-.item-wrapper
-{
+.item-wrapper {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -123,8 +105,7 @@ body
   margin-bottom: 1rem;
 }
 
-.export-container
-{
+.export-container {
   height: 50%;
   top: 25%;
   right: 5%;
@@ -134,39 +115,36 @@ body
   justify-content: center;
 }
 
-.page-items
-{
-  width: 300px;
+.page-items {
+  width: 100%;
   height: 25px;
 }
 
-.label-wrapper
-{
+.label-wrapper {
+  display: flex;
   width: 40%;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* text-align: center; */
 }
 
-.colon-wrapper
-{
+.colon-wrapper {
   width: 10%;
 }
 
-.colon-wrapper p
-{
+.colon-wrapper p {
   margin: 0;
 }
 
-.element-wrapper
-{
+.element-wrapper {
   width: 40%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  
 }
 
-.selectbox-item
-{
+.selectbox-item {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -175,24 +153,61 @@ body
   margin-top: 0.5rem;
 }
 
-.selectbox-item p
-{
+.selectbox-item p {
   margin: 0;
 }
 
-.selectbox-item input
-{
+.selectbox-item input {
   margin-bottom: 0;
 }
 
-.page-items[type='textarea']
-{
+.page-items[type="textarea"] {
   height: 50px;
 }
 
-.export-button{
-  background-color: #B2A59B;
+.export-button {
+  background-color: #b2a59b;
   border: 1px solid black;
   padding: 10px;
   cursor: pointer;
+}
+
+.arrows-updown
+{
+  display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar-container {
+    min-height: fit-content;
+    max-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    width: 100vw;
+    gap: 1rem;
+    padding-bottom: 2px;
+    border-radius: 0%;
+  }
+  .buttons-container {
+    width: 50%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .fullpage-container
+  {
+    margin: 0 10vw 0 10vw;
+    margin-top: 50vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+  }
+  .main-container
+  {
+    overflow: hidden;
+  }
 }

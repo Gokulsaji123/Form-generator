@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import SideButton from "./SideButton";
+import { motion } from "framer-motion";
+import CreatePDFfromHTML from "../util";
 
 export default function Sidebar({ addItem }) {
   const selectCount = useRef();
@@ -34,6 +36,19 @@ export default function Sidebar({ addItem }) {
             ref={selectCount}
           />
         </div>
+        <motion.button
+          animate={{ boxShadow: "2px 2px 5px" }}
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "4px 4px 5px",
+            transition: { ease: "easeInOut" },
+          }}
+          transition={{ ease: "easeInOut" }}
+          className="export-button"
+          onClick={CreatePDFfromHTML}
+        >
+          Export to pdf
+        </motion.button>
       </div>
     </div>
   );

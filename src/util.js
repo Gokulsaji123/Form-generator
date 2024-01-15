@@ -10,7 +10,6 @@ export default function CreatePDFfromHTML() {
     var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
     html2canvas($(".page-container")[0]).then(function (canvas) {
-        const margin = [0.5, 0.5];
         var imgData = canvas.toDataURL("image/jpeg", 1.0);
         var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
         pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
